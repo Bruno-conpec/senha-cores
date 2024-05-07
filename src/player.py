@@ -73,13 +73,16 @@ def tres_acerto(guess_hist, res_hist):
 
 
 def player(guess_hist, res_hist):
-    match res_hist[-1][0]:
-        case 0:
-            return zero_acerto(guess_hist, res_hist)
-        case 1:
-            return um_acerto(guess_hist, res_hist)
-        case 2:
-            return dois_acerto(guess_hist, res_hist)
-        case 3:
-            return tres_acerto(guess_hist, res_hist)
-        # case 4: bruno salles
+    try:
+        match res_hist[-1][0]:
+            case 0:
+                return zero_acerto(guess_hist, res_hist)
+            case 1:
+                return um_acerto(guess_hist, res_hist)
+            case 2:
+                return dois_acerto(guess_hist, res_hist)
+            case 3:
+                return tres_acerto(guess_hist, res_hist)
+            # case 4: bruno salles
+    except:
+        return zero_acerto(guess_hist, res_hist)
